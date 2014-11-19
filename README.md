@@ -1,4 +1,4 @@
 ARMSIM-1-
 =========
 
-A web based ARM instruction set simulator
+This was created with the contribution of Dileepa Chandima and Ruwangika Gunawardhana as requested for subject no.CO227 
