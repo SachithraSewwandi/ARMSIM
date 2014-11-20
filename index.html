@@ -1,0 +1,157 @@
+<html>
+<head>
+    <title>ARM-SIM</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="script.js"></script>    
+</head>
+
+<body>
+    <div class="content">
+        
+        
+        <div class="menutop">
+            <table>
+                <td style="width:20px"></td>
+                <td><img src="images/logo.png" /></td>
+                <td style="width:40px"></td>
+                <td class="nam">ARM-SIM</td>
+                <td style="width:450px"></td>
+                <td style="color:#fff;text-align: right;">
+                    <x style="font-size:20px;">A Web Based ARM Instrustion Set Simulator</x><br>
+                    <x style="font-size:14px;color: #42AB34;">http//: www.armsim.pdn.ac.lk</x>
+                </td>
+            </table>
+        </div>
+    
+        <div style="padding:10px">
+        
+           You can edit    >   save    >   compile     >    simulate your code here >
+            
+        </div>
+        <div style="height:1px;background-color:#42AB34;"></div>
+        <div style="height:20px"></div>
+        
+        <div class="contenteditors">
+            <table>
+            
+                <td class="contleft">
+                    
+                    Int Regs[16]<br><br>
+                    <form>
+                        <textarea class="input" name="input" style="width:250px;height:510px;border: 1px solid rgba(136,164,155, 0.7)">
+PC          = 0
+SP          = 0
+                            
+Reg[0]      = 0
+Reg[1]      = 0
+Reg[2]      = 0                            
+Reg[3]      = 0
+Reg[4]      = 0
+Reg[5]      = 0
+Reg[6]      = 0                            
+Reg[7]      = 0
+Reg[8]      = 0
+Reg[9]      = 0
+Reg[10]     = 0
+Reg[11]     = 0
+Reg[12]     = 0                            
+Reg[13]     = 0
+Reg[14]     = 0
+Reg[15]     = 0                            
+                                                        
+                        </textarea>
+                        
+                        <br><br><input type="button" class="extrbtn" style="width:250px" value="Reinitialize Reg[]">
+                    </form>
+                    
+                    
+                </td>
+                
+                <td class="contright">
+                
+                <form class="ContactForm">
+                    Current Buffer >> type your code here<br><br>
+                    <div id="editor" class="editor" style="width: 780px;height: 340px;margin-left:-400px"></div><br><br>
+                    <script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
+                    <script src="src/theme-cobalt.js" type="text/javascript" charset="utf-8"></script>
+                    <script src="src/mode-assembly_x86.js" type="text/javascript" charset="utf-8"></script>
+                    <script>
+                        var editor = ace.edit("editor");
+                        editor.setTheme("ace/theme/cobalt");
+                        var assembly_x86Mode = require("ace/mode/assembly_x86").Mode;
+                        editor.getSession().setMode(new assembly_x86Mode());
+                          
+                    </script>
+                
+                   
+                   Input Values (If you have an input valuses enter here ) >>>>>>>>>
+                       
+                        <textarea id="input" class="input" name="input" style="width:800px;height:100px;border: 1px solid rgba(136,164,155, 0.7)" value=""></textarea>
+                    </form>
+                    
+                    <form>
+                        <table >
+                            <td class="extrbtn"><input type="file" id="fileToLoad"></td>
+                            <td><input type="button" class="extrbtn"  value="Load" id="load"></td>
+                            <td style="width:520px"></td>
+                            <td><input type="button" class="extrbtn"  value="Compile" id="submit"></td>
+                            <td><input type="button" class="extrbtn"  value="Run steps"></td>
+                        </table>
+                    </form>
+                    
+                    
+                </td>
+                
+            </table>
+        </div>
+        
+        <div style="height:20px"></div>
+        <div style="height:1px;background-color:#42AB34;"></div>
+        <div style="height:20px"></div>
+        
+        <div class="editor" >
+            Compiled out put ...
+            <div style="height:10px;"></div>
+            <form><textarea class="cmd" name="input" id="responseText"></textarea></form>
+        </div>
+        
+        <div style="height:20px"></div>
+        <div class="menutop" style="height:200px">
+            
+            <div style="height:30px"></div>
+            <table>
+                <td style="width:20px"></td>
+                <td style="color:#fff;text-align: left;">
+                    <x style="font-size:13px;color: #fff;">This Web Based ARM Instrustion Set Simulator is created by</x><br>
+                    <x style="font-size:13px;color: #fff;margin-left:30px;">E/11/171 - Dileepa Chandima</x><br>
+                    <x style="font-size:13px;color: #fff;margin-left:30px;">E/11/452 - Sachithra Sewwandhi</x><br>
+                    <x style="font-size:13px;color: #fff;margin-left:30px;">E/11/137 - Ruwangika Gunawardana</x><br>
+                </td>
+                <td style="width:340px"></td>
+                <td><img src="images/logo.png" /></td>
+                <td style="width:40px"></td>
+                <td class="nam">
+                    ARM-SIM<br>
+                    <x style="font-size:16.6px;">www.armsim.pdn.ac.lk</x>
+                
+                </td>
+                
+                
+            </table>
+            
+            <div style="height:25px;"></div>
+            <div style="font-size: 12px;margin-left:30px;margin-right:30px;text-align: center;color: #42AB34;">
+                arm-sim is optimized for learning, testing, and training ARM Instruction Set .	While using this site, 
+                you agree to have read and accepted our terms of use, cookie and privacy policy. 
+                Copyright 2014 by Refsnes Data. All Rights Reserved.
+            </div>
+           
+        </div>
+        
+        
+    </div>
+</body>
+    
+    
+</html>

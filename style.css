@@ -1,0 +1,109 @@
+.content{
+    width: 1200px;+
+    height: 1500px;
+    background-color: #EDF2F7;
+    font-family: "Open Sans";
+    font-size: 13px;
+    position: relative;
+    left: 50%;
+    margin-left: -600px;
+    margin-top: 0px;
+    color: #121225;
+    border: 1px solid  rgba(18,18,37, 0.2);
+}
+
+input.file {
+	position: relative;
+	text-align: right;
+	-moz-opacity:0 ;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+}
+
+.contenteditors{
+    width: 1100px;+
+    height: 900px;
+    font-family: "Open Sans";
+    font-size: 13px;
+    position: relative;
+    left: 50%;
+    margin-left: -550px;
+    margin-top: 0px;
+    color: #121225;
+}
+
+.contleft{
+    width: 300px;
+    height: 600px;
+    font-size: 13px;
+}
+
+.contright{
+    width: 800px;
+    height: 600px; 
+    font-size: 13px;
+}
+
+
+.menutop{
+    background-color: #121225;
+    height: 60px;
+    width: 1180px;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+.nam{
+    font-family: "Gill Sans MT";
+    font-size: 40px;
+    color: #42AB34;
+}
+
+.editor{
+    width: 1000px;
+    position: relative;
+    left: 50%;
+    margin-left: -550px;
+    padding: 10px;
+}
+
+
+textarea {
+    resize: none;
+    font-size: 13px;
+    font-family: "Open Sans";
+}
+
+ul li{
+    display: inline;
+    list-style: none;
+}
+
+.cmd{
+    width:1080px;
+    height:200px;
+    border: 1px solid rgba(136,164,155, 0.7);
+    color: #fff;
+    background-color: #000;
+    font-size: 15px;
+    font-family: "Consolas" , "Lucida Consolas";
+}
+
+.extrbtn:hover{
+    color: #fff;
+    background-color: #121225;
+}
+
+.extrbtn{
+    width: 130px;
+    height: 30px;
+    padding: 3px;
+    font-family: "Open Sans";
+    background-color: #70C663;
+    color: #000;
+    text-align: center;
+    font-size: 13px;
+    border-radius: 3px;
+    border: 1px solid rgba(40,40,68, 0.6);
+}
