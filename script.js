@@ -194,7 +194,7 @@ $( document ).ready(
             lines[lineNum-(1+gutLineNo)].style.backgroundColor = "#002240";
         }
         
-        if(ddd=="\t" || ddd=="\n" || ddd==""){
+        if(ddd=="\t" || ddd=="\n" || ddd=="" || ddd.match("#\\s+.*$")){
             empytLine=1;
             //alert("free line ----- outer");
         }else{
