@@ -300,8 +300,8 @@ $( document ).ready(
                     break;
                     
                 case 8://hi
-                     var value1=Math.abs(cmp1);
-                    var value2=Math.abs(cmp2)
+                    var value1=abs(cmp1);
+                    var value2=abs(cmp2);
                     var diff=value1-value2;
                     if(diff>0) {
                         var ii=i;
@@ -312,8 +312,8 @@ $( document ).ready(
                     break;
 
                 case 9://ls
-                    var value1=Math.abs(cmp1);
-                    var value2=Math.abs(cmp2);
+                    var value1=abs(cmp1);
+                    var value2=abs(cmp2);
                     var diff=value1-value2;
                     if(diff<=0) {
                         var ii=i;
