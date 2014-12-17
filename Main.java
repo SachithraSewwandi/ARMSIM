@@ -4,18 +4,21 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.regex.*;
 
-//read the compiled file and take the hexa decimal numbers in main to a file 
-/**
- * Created by Yasas on 04-12-2014.
- */
+
 public class Main {
-	
+    
     public static void main(String[] args ){
 
         String filename="addtext.txt";
         String write = "file.txt";
+        int countlength =0;
+        ArrayList<String> addr = new ArrayList<String>();
+        ArrayList<String> goaddr = new ArrayList<String>();
+        ArrayList<String> ins = new ArrayList<String>();
+        ArrayList<String> branch = new ArrayList<String>();
 
         try{
             FileReader fileRd = new FileReader(filename);
@@ -27,19 +30,63 @@ public class Main {
             while((line = bufferRd.readLine()) != null){
 
                 if(Reg.stringChecker(".*<main>:.*",line)){
+
                     while((line = bufferRd.readLine()) != null) {
 
                         if (Reg.stringChecker(".*<atexit>:.*", line)) {
+                            countlength=addr.size();
+                            //bufferwr.write(countlength+"\n");
+                            //bufferwr.flush();
+
+
+                            int x=0;
+                            int y=0;
+                            boolean have = false;
+                            for(x=0;x<countlength;x++){
+                                for(y=0;y<countlength;y++){
+                                    if(goaddr.get(x).equals(addr.get(y))){
+                                        have = true;
+                                        int xy=y-x;
+                                        String sxy=xy+"**";
+                                        branch.add(sxy);
+                                    }
+
+
+                                }
+
+                                if(!have){
+                                        branch.add("0**");
+                                }else{
+                                    have=false;
+                                }
+                                bufferwr.write(branch.get(x)+ins.get(x));
+                               bufferwr.flush();
+                            }
+
+
+
                             return;
                         } else {
-                        	String[] array=line.split("\\t");
-                        	if(array.length>1){
-                        	
-                        		 bufferwr.write(array[1]);
-                                // bufferwr.write("\n");
-                                 bufferwr.flush();
-                        	}else if(array.length==1 && array[0].contains(":"))bufferwr.write("0 ");
                            
+                           
+                            String[] arrayins=line.split("\\t");
+                            
+                            
+                            if(arrayins.length>1){
+                                    String arrayadd = (arrayins[0].split("    ")[1]).split(":")[0];
+                                    String arrins = arrayins[1];
+                                    String goadsd=arrayins[3].substring(0,4);
+                                    
+                                    addr.add(arrayadd);
+                                    ins.add(arrins);
+                                    goaddr.add(goadsd);
+                            }else if(arrayins.length==1 && arrayins[0].contains(":")){
+                                    addr.add("a");
+                                    ins.add("0 ");
+                                    goaddr.add("b");
+                                    
+                                
+                            }
 
                         }
                     }

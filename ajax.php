@@ -38,20 +38,21 @@
     //Run the compiled file and get the finl out put to variables >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     if(file_exists("compiled")){
         $process = proc_open("arm-elf-run compiled<in.txt", $descriptorspec, $pipes, dirname(__FILE__), null);
+        $stdout = stream_get_contents($pipes[1]);
+        fclose($pipes[1]);
     }
-    $stdout = stream_get_contents($pipes[1]);
-    fclose($pipes[1]);
-
+    
     //do objt doumping and get the instructions to var>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     if(file_exists("compiled")){
         $process = proc_open("arm-elf-objdump -d -j .text compiled", $descriptorspec, $pipes, dirname(__FILE__), null);
         exec("arm-elf-objdump -d -j .text compiled>addtext.txt");
         exec("java Main");
+        $stdins = stream_get_contents($pipes[1]);
+        fclose($pipes[1]);
+        $instructions = file_get_contents("./file.txt");
     }
-    $stdins = stream_get_contents($pipes[1]);
-    fclose($pipes[1]);
-
-    $instructions = file_get_contents("./file.txt");
+    
+    
 
 
 

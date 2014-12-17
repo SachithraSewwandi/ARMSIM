@@ -3,11 +3,12 @@
     <title>ARM-SIM</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="code.js"></script>
+    
 </head>
 
 <body>
+    <y class='compiling'></y>
+    
     <div class="content">
         
         
@@ -40,23 +41,29 @@
                     
                     Int Regs[16]<br>
                     <form>
-                        <textarea  class="input" id="registers" name="input" style="width:250px;height:410px;border: 1px solid rgba(136,164,155, 0.7)"></textarea>
-                        <br><br>
-                         Current Instruction<br>
-                        <textarea  
-                                  class="input" 
-                                  id="r" name="input" 
-                                  style="width:250px;color: #fff;
-    background-color: #000;font-size: 13px;font-family: 'Consolas' , 'Lucida Consolas';height:20px;border: 1px solid rgba(136,164,155, 0.7)">
-                        </textarea><br>
-                        <textarea  
-                                  class="input" 
-                                  id="res" name="input" 
-                                  style="width:250px;color: #fff;
-    background-color: #000;font-size: 13px;font-family: 'Consolas' , 'Lucida Consolas';height:20px;border: 1px solid rgba(136,164,155, 0.7)">
-                        </textarea>
                         
-                        <br><br><input type="button" class="extrbtn" style="width:250px" value="Reinitialize Reg[]" id="rein">
+                        <br>
+                          Register 00 - <input type="text" class="input" id="r00"><br>
+                         Register 01 - <input type="text" class="input" id="r01"><br>
+                         Register 02 - <input type="text" class="input" id="r02"><br>
+                         Register 03 - <input type="text" class="input" id="r03"><br>
+                         Register 04 - <input type="text" class="input" id="r04"><br>
+                         Register 05 - <input type="text" class="input" id="r05"><br>
+                         Register 06 - <input type="text" class="input" id="r06"><br>
+                         Register 07 - <input type="text" class="input" id="r07"><br>
+                         Register 08 - <input type="text" class="input" id="r08"><br>
+                         Register 09 - <input type="text" class="input" id="r09"><br>
+                         Register 10 - <input type="text" class="input" id="r10"><br>
+                         Register 11 - <input type="text" class="input" id="r11"><br>
+                         Register 12 - <input type="text" class="input" id="r12"><br><br>
+                         Register 13 - <input type="text" class="input" id="r13"> - sp<br>
+                         Register 14 - <input type="text" class="input" id="r14"> - lr<br>
+                         Register 15 - <input type="text" class="input" id="r15"> - pc<br>
+                        
+                        
+                        <br><br><input type="button" class="extrbtn" style="width:250px" value="Set Register values" id="change">
+                        <br><br><input type="button" class="extrbtn1" style="width:250px" value="Reinitialize Registers" id="rein">
+                        <br><br><input type="button" class="extrbtn1" style="width:250px" value="Reset all" id="reset">
                     </form>
                     
                     
@@ -66,7 +73,7 @@
                 
                 <form class="ContactForm">
                     Current Buffer >> type your code here<br>
-                    <div id="editor" class="editor" style="width: 780px;height: 340px;margin-left:-400px"></div><br><br>
+                    <div id="editor" class="editor" style="width: 780px;height: 334.4px;margin-left:-400px"></div><br><br>
                     <script src="src/ace.js" type="text/javascript" charset="utf-8"></script>
                     <script src="src/theme-cobalt.js" type="text/javascript" charset="utf-8"></script>
                     <script src="src/mode-assembly_x86.js" type="text/javascript" charset="utf-8"></script>
@@ -145,7 +152,12 @@
         
         
     </div>
+    
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="code.js"></script>
+    
 </body>
+ 
     
     
 </html>
